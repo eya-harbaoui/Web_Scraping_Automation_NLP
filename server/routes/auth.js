@@ -22,7 +22,7 @@ router.get("/login/failed", (req, res) => {
         message: "Log in Failure",
     });
 });
-
+router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get(
     "/google/callback",
     passport.authenticate("google", {
@@ -32,7 +32,6 @@ router.get(
     })
 );
 
-router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get("/logout", (req, res) => {
     req.logout();
     res.redirect(process.env.CLIENT_URL);
