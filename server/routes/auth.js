@@ -22,9 +22,9 @@ router.get("/login/failed", (req, res) => {
         message: "Log in Failure",
     });
 });
-router.get("/google", passport.authenticate("google", ["profile", "email"]));
+router.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 router.get(
-    "/google/callback",
+    "/auth/google/callback",
     passport.authenticate("google", {
         sucessRedirect: process.env.CLEINT_URL,
         failureRedirect: "/login/failed",

@@ -37,9 +37,9 @@
 }
 
 .img {
-    width: 160%;
+    width: 150%;
     position: absolute;
-    left: -150px;
+    left: -90px;
     top: -50px;
 }
 
@@ -74,7 +74,7 @@
     font-weight: 500;
     padding: 12px 25px;
     color: white;
-    background-color: #ffc801;
+    background-color: #3343FF;
     border-radius: 12px;
     margin: 10px 0 0 0;
     outline: none;
@@ -92,7 +92,7 @@
 .text>a {
     font-size: 16px;
     font-weight: 500;
-    color: #ffc801;
+    color: #3343FF;
 }
 
 .google_btn {
