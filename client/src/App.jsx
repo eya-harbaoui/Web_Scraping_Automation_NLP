@@ -1,49 +1,23 @@
-import {Routes, Route, Navigate, BrowserRouter} from "react-router-dom";
-import {useEffect, useState} from "react";
-import axios from "axios";
+import {Route, Routes, Navigate, BrowserRouter} from "react-router-dom";
 import Home from "./pages/Home";
-import Login from './pages/Login';
 import Signup from "./pages/Signup";
-import "./App.css";
+import Login from "./pages/Login";
+import "./App.css"
 
 function App() {
-  const [user, setUser] = useState(null);
-
-  const getUser = async () => {
-    try {
-      const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
-      const {data} = await axios.get(url, {withCredentials: true});
-      setUser(data.user._json);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    getUser();
-  }, []);
+  const user = localStorage.getItem("token");
 
   return (
-    <div className="container">
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className="container">
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={user ? <Home user={user} /> : <Navigate to="/login" />}
-          />
-          <Route
-            exact
-            path="/login"
-            element={user ? <Navigate to="/" /> : <Login />}
-          />
-          <Route
-            path="/signup"
-            element={user ? <Navigate to="/" /> : <Signup />}
-          />
+          {user && <Route path="/" exact element={<Home />} />}
+          <Route path="/signup" exact element={<Signup />} />
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/" element={<Navigate replace to="/login" />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

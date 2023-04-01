@@ -3,10 +3,19 @@ import styles from "./styles.module.css";
 function Home(userDetails) {
   const user = userDetails.user;
   const logout = () => {
-    window.open(`${process.env.REACT_APP_API_URL}/auth/logout`, "_self");
+    localStorage.removeItem( "token" );
+    window.location.reload();
   };
   return (
-    <div className={styles.container}>
+    <div className={styles.main_container}>
+      <nav className={styles.navbar}>
+        <h1>Web Scraper </h1>
+        <button className={styles.btn} onClick={logout}>
+          Log Out
+        </button>
+      </nav>
+    </div>
+    /*<div className={styles.container}>
       <h1 className={styles.heading}>Home</h1>
       <div className={styles.form_container}>
         <div className={styles.left}>
@@ -31,12 +40,9 @@ function Home(userDetails) {
             className={styles.input}
             placeholder="Email"
           />
-          <button className={styles.btn} onClick={logout}>
-            Log Out
-          </button>
-        </div>
+           </div>
       </div>
-    </div>
+    </div>*/
   );
 }
 
