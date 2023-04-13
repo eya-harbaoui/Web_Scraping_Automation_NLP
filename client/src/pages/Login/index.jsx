@@ -38,6 +38,8 @@ function Login() {
         if ( data.status == "ok" ) {
           alert( "login successful" );
           window.localStorage.setItem( "token", data.data );
+          window.localStorage.setItem("loggedIn", true); //onclick aal login var set to true
+
           window.location.href = "./userDetails";
       }
       });
