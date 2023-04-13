@@ -2,6 +2,7 @@ import {Route, Routes, Navigate, BrowserRouter} from "react-router-dom";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import UserDetails from "./pages/UserDetails";
 import "./App.css"
 
 function App() {
@@ -11,10 +12,10 @@ function App() {
     <BrowserRouter>
       <div className="container">
         <Routes>
-          {user && <Route path="/" exact element={<Home />} />}
+          <Route path="/" exact element={<Login />} />
           <Route path="/signup" exact element={<Signup />} />
           <Route path="/login" exact element={<Login />} />
-          <Route path="/" element={<Navigate replace to="/login" />} />
+        {  <Route path="/userDetails" element={<UserDetails/>} />}
         </Routes>
       </div>
     </BrowserRouter>

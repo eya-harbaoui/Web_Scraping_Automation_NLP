@@ -4,10 +4,8 @@ import {useState} from "react";
 import axios from "axios";
 
 function Login() {
-  const [data, setData] = useState({
-    email: "",
-    password: "",
-  });
+   const [email, setEmail] = useState("");
+   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
   /*const googleAuth = () => {
@@ -16,27 +14,33 @@ function Login() {
       "_self"
     );
   };*/
-  const handleChange = ({currentTarget: input}) => {
-    setData({...data, [input.name]: input.value}); //The object passed to setData uses the spread operator (...data) to copy all the properties of the data object into the new object. This is done to preserve any existing data that was previously set.
-  };
   //The main advantage of using an async function in React is that it allows you to use the await keyword 
   //to wait for asynchronous operations to complete, such as fetching data from an API or performing an expensive computation.
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
+    console.log(email, password);
     e.preventDefault();
-    try {
-      const url = "http://localhost:8080/api/auth";
-      const {data: res} = await axios.post(url, data);
-      localStorage.setItem("token", res.data);
-      window.location = "/";
-    } catch (error) {
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) {
-        setError(error.response.data.message);
+    fetch("http://localhost:5000/login-user", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Acess-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log( data, "userRegister" );
+        if ( data.status == "ok" ) {
+          alert( "login successful" );
+          window.localStorage.setItem( "token", data.data );
+          window.location.href = "./userDetails";
       }
-    }
+      });
   };
   return (
     <div className={styles.container}>
@@ -50,8 +54,7 @@ function Login() {
           <input
             type="email"
             name="email"
-            onChange={handleChange}
-            value={data.email}
+            onChange={(e) => setEmail(e.target.value)}
             className={styles.input}
             placeholder="Email"
             required
@@ -59,14 +62,15 @@ function Login() {
           <input
             type="password"
             name="password"
-            onChange={handleChange}
-            value={data.password}
+            onChange={(e) => setPassword(e.target.value)}
             className={styles.input}
             placeholder="Password"
             required
           />
           {error && <div className={styles.error_msg}> {error}</div>}
-          <button className={styles.btn}>Log In</button>
+          <button type="submit" className={styles.btn} >
+            Log In
+          </button>
           <p className={styles.text}>or</p>
           <button className={styles.google_btn}>
             <img src="./images/google.png" alt="google icon" />
