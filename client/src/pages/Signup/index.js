@@ -1,49 +1,49 @@
 import {Link,useNavigate} from "react-router-dom";
 import styles from "./styles.module.css";
-import { useState } from "react";
+import React, { useState} from "react";
 import axios from "axios";
 import React from "react";
 function Signup() {
-  const [data, setData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-  });
-  /*const googleAuth = () => {
-    window.open(
-      `${process.env.REACT_APP_API_URL}/auth/google/callback`,
-      "_self"
-    );
-  };*/
-
+   const [firstName, setFirstName] = useState("");
+   const [lastName, setLastName] = useState("");
+   const [email, setEmail] = useState("");
+   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleChange = ({currentTarget: input}) => {
+  /*const handleChange = ({currentTarget: input}) => {
     setData({...data, [input.name]: input.value}); //The object passed to setData uses the spread operator (...data) to copy all the properties of the data object into the new object. This is done to preserve any existing data that was previously set.
-  };
+  };*/
   //([input.name]) is used to dynamically set the value of a property in the new object. The name of the property is taken from the name attribute of the input element that triggered the event, and its value is taken from the value attribute of that same input element.
 
   //The main advantage of using an async function in React is that it allows you to use the await keyword
   //to wait for asynchronous operations to complete, such as fetching data from an API or performing an expensive computation.
-
-  const handleSubmit = async (e) => {
+ /* const handleChange = (e) => {
+    setData({...data, [e.target.name]: e.target.value});
+  };*/
+   
+  const handleSubmit = ( e ) => {
+    console.log( firstName, lastName, email, password );
     e.preventDefault();
-    try {
-      const url = "http://localhost:8080/api/users";
-      const {data: res} = await axios.post(url, data);
-      navigate("/login");
-      console.log(res.message);
-    } catch (error) {
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) {
-        setError(error.response.data.message);
-      }
-    }
+    fetch("http://localhost:5000/register", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Acess-Control-Allow-Origin": "*",
+      },
+      body:JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "userRegister");
+      });
   }; //generally sturcture handle subbmit is done this way
   //preventDefault  is called on an event object to prevent the default behavior of an event from occurring.
   //example, when a user clicks on a link element, the default behavior of the click event is to navigate to the URL specified in the href attribute of the link element. If you attach an event listener to the link element and call the preventDefault() function on the event object inside the event handler function, you can prevent the link from navigating to its default URL.
@@ -60,37 +60,33 @@ function Signup() {
           <input
             type="text"
             name="firstName"
-            value={data.firstName}
             className={styles.input}
             placeholder="First Name"
-            onChange={handleChange}
+            onChange={(e) => setFirstName(e.target.value)}
             required
           />
           <input
             type="text"
             name="lastName"
-            value={data.lastName}
             className={styles.input}
             placeholder="Last Name"
-            onChange={handleChange}
+            onChange={(e) => setLastName(e.target.value)}
             required
           />
           <input
             type="email"
             name="email"
-            value={data.email}
             className={styles.input}
             placeholder="Email "
-            onChange={handleChange}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
           <input
             type="password"
             className={styles.input}
-            value={data.password}
             name="password"
             placeholder="Password"
-            onChange={handleChange}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
           {error && <div className={styles.error_msg}> {error}</div>}
