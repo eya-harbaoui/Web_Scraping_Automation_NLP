@@ -2,7 +2,8 @@ import {Link, useNavigate} from "react-router-dom";
 import { useState, useEffect } from "react";
 import styles from "../Login/styles.module.css";
 import axios from "axios";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function UserDetails() {
   const [userData, setUserData] = useState("");
     function logOut() {
@@ -30,7 +31,8 @@ export default function UserDetails() {
         console.log(data, "userData");
         setUserData( data.data );
         if ( data.data == 'token expired' ) {
-          alert( "Token expired login again" );
+          //alert( "Token expired login again" );
+          toast.error("Token expired login again !");
           window.localStorage.clear();
           window.location.href = "./login";
 

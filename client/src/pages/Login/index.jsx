@@ -2,7 +2,8 @@ import {Link, useNavigate} from "react-router-dom";
 import styles from "./styles.module.css";
 import {useState} from "react";
 import axios from "axios";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Login() {
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
@@ -36,7 +37,8 @@ function Login() {
       .then((data) => {
         console.log( data, "userRegister" );
         if ( data.status == "ok" ) {
-          alert( "login successful" );
+          //alert( "login successful" );
+          toast.sucess("login successful");
           window.localStorage.setItem( "token", data.data );
           window.localStorage.setItem("loggedIn", true); //onclick aal login var set to true
 

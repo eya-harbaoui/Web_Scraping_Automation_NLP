@@ -1,16 +1,17 @@
-import {Link,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Signup() {
-   const [firstName, setFirstName] = useState("");
-   const [lastName, setLastName] = useState("");
-   const [email, setEmail] = useState("");
-   const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-
+  let validate = true;
   /*const handleChange = ({currentTarget: input}) => {
     setData({...data, [input.name]: input.value}); //The object passed to setData uses the spread operator (...data) to copy all the properties of the data object into the new object. This is done to preserve any existing data that was previously set.
   };*/
@@ -18,13 +19,36 @@ function Signup() {
 
   //The main advantage of using an async function in React is that it allows you to use the await keyword
   //to wait for asynchronous operations to complete, such as fetching data from an API or performing an expensive computation.
- /* const handleChange = (e) => {
+  /* const handleChange = (e) => {
     setData({...data, [e.target.name]: e.target.value});
   };*/
-   
-  const handleSubmit = ( e ) => {
-    console.log( firstName, lastName, email, password );
+
+  const handleSubmit = (e) => {
+    console.log(firstName, lastName, email, password);
     e.preventDefault();
+    if (!email || !password || !firstName || !lastName) {
+      toast.error("All fields must be filled out!");
+      validate = false;
+    } else {
+      if (password.length < 6) {
+        toast.warning("Short Password");
+        validate = false;
+      } else {
+        if (password.search(/\d/) == -1) {
+          toast.warning("Your password must contain alphanumeric characters!");
+          validate = false;
+        }
+        if (password.search(/[a-zA-Z]/) == -1) {
+          toast.warning("Your password must contain alphanumeric characters!");
+          validate = false;
+        }
+        if (password.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:]/) == -1) {
+          toast.warning("Your password must contain symbols!");
+          validate = false;
+        }
+      }
+    }
+    if(validate == true){
     fetch("http://localhost:5000/register", {
       method: "POST",
       crossDomain: true,
@@ -33,7 +57,7 @@ function Signup() {
         Accept: "application/json",
         "Acess-Control-Allow-Origin": "*",
       },
-      body:JSON.stringify({
+      body: JSON.stringify({
         firstName,
         lastName,
         email,
@@ -44,6 +68,7 @@ function Signup() {
       .then((data) => {
         console.log(data, "userRegister");
       });
+    }
   }; //generally sturcture handle subbmit is done this way
   //preventDefault  is called on an event object to prevent the default behavior of an event from occurring.
   //example, when a user clicks on a link element, the default behavior of the click event is to navigate to the URL specified in the href attribute of the link element. If you attach an event listener to the link element and call the preventDefault() function on the event object inside the event handler function, you can prevent the link from navigating to its default URL.
