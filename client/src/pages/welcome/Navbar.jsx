@@ -4,15 +4,13 @@ import { FaHome } from "react-icons/fa";
 import { BsFillExclamationCircleFill } from "react-icons/bs";
 import { BiUserPin } from "react-icons/bi";
 import { MenuLinks } from "./MenuLinks";
-import { useState, useEffect } from "react";
 function Navbar() {
-  const [icons, setIcons] = useState({});
-
   return (
     <nav className="NavbarItems">
       <h1 className="navbar-logo">Web Scraping Automation</h1>
       <ul className="nav-menu">
         {MenuLinks.map((item, index) => {
+          //display icons according to their names in menuLinks list
           const IconComponent =
             item.icon === "FaHome"
               ? FaHome
@@ -24,8 +22,10 @@ function Navbar() {
 
           return (
             <li key={index}>
-              {IconComponent && <IconComponent />}
-              <a href={item.url}>{item.title}</a>
+              <a href={item.url} className={item.cName}>
+                {IconComponent && <IconComponent/>}
+                {item.title}
+              </a>
             </li>
           );
         })}
