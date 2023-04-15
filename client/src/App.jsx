@@ -1,5 +1,5 @@
 import {Route, Routes, Navigate, BrowserRouter} from "react-router-dom";
-import Home from "./pages/Home";
+import  Welcome from "./pages/welcome"
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import UserDetails from "./pages/UserDetails";
@@ -13,11 +13,13 @@ function App() {
     <BrowserRouter>
       <div className="container">
         <Routes>
+
           <Route
             path="/"
             exact
             element={isLoggedIn == "true" ? <UserDetails /> : <Login />}
           />
+          <Route path="/welcome" exact element={<Welcome/>}></Route>
           <Route path="/signup" exact element={<Signup />} />
           <Route path="/login" exact element={<Login />} />
           {<Route path="/userDetails" element={<UserDetails />} />}

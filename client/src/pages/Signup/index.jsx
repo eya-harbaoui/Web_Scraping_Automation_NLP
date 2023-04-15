@@ -115,7 +115,7 @@ function Signup() {
             required
           />
           {error && <div className={styles.error_msg}> {error}</div>}
-          <button type="submit" className={styles.btn}>
+          <button type="submit" className={styles.btn} onClick={handleSubmit}>
             Sign Up
           </button>
 
