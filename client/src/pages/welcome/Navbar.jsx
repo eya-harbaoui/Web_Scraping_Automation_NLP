@@ -8,18 +8,23 @@ import {AiOutlineBars} from "react-icons/ai";
 import {GrClose} from "react-icons/gr";
 import { MenuLinks } from "./MenuLinks";
 function Navbar() {
-  const [toggle, setToggle] = useState("not toggled");
+  //if we click on our toggle icon we will show the navbar links for screens size less then
+  //850px
+  const [clicked, setClicked] = useState(false);
+  const handleClick=()=>{
+    setClicked(!clicked);
+  }
 
   return (
     <nav className="NavbarItems">
       <h1 className="navbar-logo">Web Scraping Automation</h1>
-      <div className="menu-icons">
-        {toggle== "toggled" && <AiOutlineBars></AiOutlineBars>}
-        {toggle== "not toggled" && <GrClose></GrClose>}
-        <GrClose></GrClose>
+      <div className="menu-icons" onClick={handleClick
+      }>
+        
+        {clicked ? <GrClose></GrClose> : <AiOutlineBars></AiOutlineBars>}
       </div>
 
-      <ul className="nav-menu">
+      <ul className={clicked? "nav-menu active":"nav-menu"}>
         {MenuLinks.map((item, index) => {
           //display icons according to their names in menuLinks list
           const IconComponent =
