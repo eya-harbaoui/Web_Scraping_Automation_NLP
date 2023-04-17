@@ -7,6 +7,7 @@ import UserDetails from "./pages/UserDetails";
 import { ToastContainer } from "react-toastify";
 import "./App.css"
 import "react-toastify/dist/ReactToastify.css";
+import Reset from "./pages/Reset";
 
 function App() {
   const isLoggedIn = window.localStorage.getItem( "loggedIn" );
@@ -15,7 +16,6 @@ function App() {
       <div className="container">
         
         <Routes>
-
           <Route
             path="/"
             exact
@@ -26,6 +26,7 @@ function App() {
           <Route path="/signup" exact element={<Signup />} />
           <Route path="/login" exact element={<Login />} />
           {<Route path="/userDetails" element={<UserDetails />} />}
+          <Route path="/reset" exact element={<Reset />} />
         </Routes>
       </div>
       <ToastContainer position="top-center"></ToastContainer>
