@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <script>
+        //whatever value received in status will be stored in this var
+        var status = '<%- JSON.stringify(status) %>';
+        if (JSON.parse(status) == "Verified") {
+            //bch naatih choix Yes or No 
+            if (confirm("Do you want to login ?")) {
+                //if yes 
+                window.location.href = "http://localhost:3000/login"
+            }
+        } else {
+            console.log("NOOOOOOOO")
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        form {
+            margin: 0 auto;
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input[type="password"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #3343FF;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #52cef7;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <h1>Reset Password for:<br/>
+        <!--bch naffichi lmail specific taa target account -->
+        <%= email %>
+    </h1>
+    <form action="" method="post">
+        <label for="password">New Password</label>
+        <input type="password" name="password" id="password" required>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

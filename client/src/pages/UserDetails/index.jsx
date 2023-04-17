@@ -31,6 +31,7 @@ export default function UserDetails() {
         setUserData( data.data );
         if ( data.data == 'token expired' ) {
           alert( "Token expired login again" );
+          //calling logout function
           window.localStorage.clear();
           window.location.href = "./login";
 
