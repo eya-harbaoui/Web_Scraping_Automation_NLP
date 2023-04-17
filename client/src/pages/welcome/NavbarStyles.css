@@ -1,22 +1,53 @@
 .NavbarItems{
+    
     display:flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
-    box-shadow: 0 5px 15px 0 rgba(0,0,0,.25);
+    box-shadow: 0 9px 16px 0 rgba(0,0,0,.25);
     width: 95%;
     height: 88px;
     border-radius: 13px;
+    position: fixed;
+    top:10px;
+    left:50%;
+    transform: translate(-50%);
+    z-index: 9999;
+    background-color: white;
+
+
+
+}
+.robot-icon{
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 20px;
+    margin-top: -9px;
     
 
+}
+.closed-icon{
+    width: 1.3rem;
+    height: 1.3rem;
+}
+.icon-nav{
+    padding-right: 10px;
+    width: 1.3rem;
+    height: 1.2rem;
+}
+.menu-icons{
+    display:none;
 
 }
 .navbar-logo{
+    display: flex;
     color:black;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     cursor: pointer;
 
 }
+
+
 .nav-menu{
     display: grid;
     grid-template-columns: repeat(3,auto);
@@ -29,10 +60,9 @@
 .nav-links{
     display: grid;
     grid-template-columns: repeat(2,auto);
-    grid-gap: 0.7rem;
     text-decoration: none;
     color:black;
-    font-size:1.2rem;
+    font-size:1.1rem;
     font-weight: 600;
     padding : 0.7rem 1rem;
     white-space: nowrap;
@@ -55,10 +85,20 @@
     .NavbarItems{
         z-index: 99;
     }
+    .menu-icons{
+    display:block;
+
+}
+.icon-nav{
+    width: 1rem;
+    height: 1rem;
+    padding-top: 7px;
+}
     .nav-menu{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     background: white;
     width: 100%;
     height: auto;
@@ -67,7 +107,7 @@
     left: -100%;
     opacity: 0;
     align-items: stretch;
-    padding: 80px 0 30px 0;
+    padding: 90px 0 30px 0;
     margin:0;
  
    
@@ -82,9 +122,10 @@
 }
 .nav-links{
     display: block;
+    align-items: center;
     width: 100%;
-    font-size: 1.2rem;
-    padding: 2rem 0;
+    font-size: 1.1rem;
+    padding: 0.9rem;
     background-color: white;
     color:black
 }
