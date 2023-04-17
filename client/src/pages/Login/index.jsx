@@ -38,14 +38,14 @@ function Login() {
         console.log( data, "userRegister" );
         if ( data.status == "ok" ) {
           //alert( "login successful" );
-          toast.sucess("login successful");
+          toast.success("login successful");
           window.localStorage.setItem( "token", data.data );
           window.localStorage.setItem( "loggedIn", true ); //onclick aal login var set to true
 
           window.location.href = "./userDetails";
         }
         else {
-          alert( "Wrong Mail or Password !" );
+          alert("wrong password");
         }
       });
   };
@@ -74,8 +74,7 @@ function Login() {
             placeholder="Password"
             required
           />
-          {error && <div className={styles.error_msg}> {error}</div>}
-          <button type="submit" className={styles.btn}>
+          <button type="submit" className={styles.btn} >
             Log In
           </button>
           <p className={styles.text}>or</p>
