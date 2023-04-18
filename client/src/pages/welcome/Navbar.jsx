@@ -2,8 +2,9 @@ import "./NavbarStyles.css";
 import React from "react";
 import { useState } from "react";
 import { FaHome } from "react-icons/fa";
-import { BsFillExclamationCircleFill } from "react-icons/bs";
-import { BiUserPin } from "react-icons/bi";
+import { MdSlowMotionVideo } from "react-icons/md";
+import { FiUserPlus } from "react-icons/fi";
+import {BiLogIn} from "react-icons/bi";
 import { AiOutlineBars } from "react-icons/ai";
 import { GrClose } from "react-icons/gr";
 import { BsRobot } from "react-icons/bs";
@@ -38,10 +39,12 @@ function Navbar() {
           const IconComponent =
             item.icon === "FaHome"
               ? FaHome
-              : item.icon === "BsFillExclamationCircleFill"
-              ? BsFillExclamationCircleFill
-              : item.icon === "BiUserPin"
-              ? BiUserPin
+              : item.icon === "MdSlowMotionVideo"
+              ? MdSlowMotionVideo
+              : item.icon === "FiUserPlus"
+              ? FiUserPlus
+              : item.icon == "BiLogIn"
+              ? BiLogIn
               : null;
 
           return (

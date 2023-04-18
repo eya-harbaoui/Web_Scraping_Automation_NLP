@@ -1,11 +1,11 @@
 export const MenuLinks = [
   { title: "Home", url: "/Home", cName: "nav-links", icon: "FaHome" },
   {
-    title: "About",
-    url: "/About",
+    title: "Demo",
+    url: "/Demo",
     cName: "nav-links",
-    icon: "BsFillExclamationCircleFill",
+    icon: "MdSlowMotionVideo",
   },
-  { title: "SignUp", url: "/SignUp", cName: "nav-links", icon: "BiUserPin" },
-  
+  { title: "Sign Up", url: "/SignUp", cName: "nav-links", icon: "FiUserPlus" },
+  { title: "Log In", url: "/Login", cName: "nav-links", icon: "BiLogIn" },
 ];
