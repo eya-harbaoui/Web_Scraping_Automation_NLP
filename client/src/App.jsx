@@ -8,20 +8,21 @@ import { ToastContainer } from "react-toastify";
 import "./App.css"
 import "react-toastify/dist/ReactToastify.css";
 import Reset from "./pages/Reset";
+import Main from "./pages/Main/index"
 
 function App() {
   const isLoggedIn = window.localStorage.getItem( "loggedIn" );
   return (
     <BrowserRouter>
       <div className="container">
-        
         <Routes>
-          <Route path="/" exact element={<Home/>}></Route>
-          <Route path="/About" exact element={<About/>}></Route>
+          <Route path="/" exact element={<Home />}></Route>
+          <Route path="/About" exact element={<About />}></Route>
           <Route path="/signup" exact element={<Signup />} />
           <Route path="/login" exact element={<Login />} />
           {<Route path="/userDetails" element={<UserDetails />} />}
           <Route path="/reset" exact element={<Reset />} />
+          <Route path="/Main" exact element={<Main />} />
         </Routes>
       </div>
       <ToastContainer position="top-center"></ToastContainer>
