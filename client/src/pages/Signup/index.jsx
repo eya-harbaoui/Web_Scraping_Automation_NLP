@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "../../components/Inputi"
+import Inputi from "../../components/Inputi";
+import {Input} from "antd";
+import PasswordVisible from "../../components/passwordvisible";
 function Signup() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -48,28 +52,33 @@ function Signup() {
         }
       }
     }
-    if(validate == true){
-    fetch("http://localhost:5000/register", {
-      method: "POST",
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Acess-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        email,
-        password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data, "userRegister");
-      });
+    if (validate == true) {
+      fetch("http://localhost:5000/register", {
+        method: "POST",
+        crossDomain: true,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          "Acess-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          password,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.error) {
+            toast.error(data.error);
+          } else {
+            toast.success("Registration successful!");
+            window.location = "/login";
+          }
+        });
     }
-  }; //generally sturcture handle subbmit is done this way
+  };//generally sturcture handle subbmit is done this way
   //preventDefault  is called on an event object to prevent the default behavior of an event from occurring.
   //example, when a user clicks on a link element, the default behavior of the click event is to navigate to the URL specified in the href attribute of the link element. If you attach an event listener to the link element and call the preventDefault() function on the event object inside the event handler function, you can prevent the link from navigating to its default URL.
   //here the default behavior of the form submission event, which is to reload the page. Instead, we can do something else, such as send an AJAX request to the server to submit the form data without reloading the page.
@@ -114,7 +123,6 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          {error && <div className={styles.error_msg}> {error}</div>}
           <button type="submit" className={styles.btn} onClick={handleSubmit}>
             Sign Up
           </button>

@@ -4,6 +4,8 @@ import {useState} from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PasswordVisible from "../../components/passwordvisible";
+import {Input} from "antd";
 function Login() {
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
@@ -38,7 +40,7 @@ function Login() {
         console.log( data, "userRegister" );
         if ( data.status == "ok" ) {
           //alert( "login successful" );
-          toast.sucess("login successful");
+          toast.success("login successful");
           window.localStorage.setItem( "token", data.data );
           window.localStorage.setItem( "loggedIn", true ); //onclick aal login var set to true
 
@@ -58,7 +60,7 @@ function Login() {
         </div>
         <div className={styles.right}>
           <h2 className={styles.from_heading}>Members Log in</h2>
-          <input
+          <Input
             type="email"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
@@ -74,7 +76,7 @@ function Login() {
             placeholder="Password"
             required
           />
-          {error && <div className={styles.error_msg}> {error}</div>}
+          {/*error && <div className={styles.error_msg}> {error}</div>*/}
           <button type="submit" className={styles.btn}>
             Log In
           </button>

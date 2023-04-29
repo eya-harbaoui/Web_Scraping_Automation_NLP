@@ -16,12 +16,7 @@ function App() {
       <div className="container">
         
         <Routes>
-          <Route
-            path="/"
-            exact
-            element={isLoggedIn == "true" ? <UserDetails /> : <Login />}
-          />
-          <Route path="/Home" exact element={<Home/>}></Route>
+          <Route path="/" exact element={<Home/>}></Route>
           <Route path="/About" exact element={<About/>}></Route>
           <Route path="/signup" exact element={<Signup />} />
           <Route path="/login" exact element={<Login />} />
