@@ -1,10 +1,10 @@
-import React from 'react'
-import NewsImg from './news2.png';
-import userImg from './user.jpg';
-import nlpImg from './nlp.png';
-import jsonImg from "./json.png"
+import React from "react";
+import NewsImg from "./news2.png";
+import userImg from "./user.jpg";
+import nlpImg from "./nlp.png";
+import jsonImg from "./json.png";
 import { Card, Row, Col, Button } from "antd";
-import "./HomeCoStyles.css"
+import "./HomeCoStyles.css";
 function HomeCo() {
   return (
     <div className="HomeCo">
@@ -69,4 +69,4 @@ function HomeCo() {
   );
 }
 
-export default HomeCo
+export default HomeCo;
