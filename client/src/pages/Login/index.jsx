@@ -68,7 +68,7 @@ function Login() {
             placeholder="Email"
             required
           />
-          <input
+          <PasswordVisible
             type="password"
             name="password"
             onChange={(e) => setPassword(e.target.value)}

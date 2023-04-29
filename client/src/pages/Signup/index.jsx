@@ -91,7 +91,7 @@ function Signup() {
         </div>
         <div className={styles.right}>
           <h2 className={styles.from_heading}>Create Account</h2>
-          <input
+          <Input
             type="text"
             name="firstName"
             className={styles.input}
@@ -99,7 +99,7 @@ function Signup() {
             onChange={(e) => setFirstName(e.target.value)}
             required
           />
-          <input
+          <Input
             type="text"
             name="lastName"
             className={styles.input}
@@ -107,7 +107,7 @@ function Signup() {
             onChange={(e) => setLastName(e.target.value)}
             required
           />
-          <input
+          <Input
             type="email"
             name="email"
             className={styles.input}
@@ -115,7 +115,7 @@ function Signup() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <input
+          <PasswordVisible
             type="password"
             className={styles.input}
             name="password"
