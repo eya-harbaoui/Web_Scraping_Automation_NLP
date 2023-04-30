@@ -1,19 +1,29 @@
-.robot{
-    width: 100%;
-    height: 100%;
-    position: relative;
+.robot {
+  width: 100%;
+  height: 100vh;
+  position: relative;
 }
-img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.robot-text{
-    position: absolute;
-    top:55%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    color: white;
-
+.robot-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.hero-text h1 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media screen and (max-width: 800px) {
+  .robot-text h1 {
+    padding: 10px 20px;
+  }
 }
