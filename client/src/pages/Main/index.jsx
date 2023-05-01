@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Navbar from '../welcome/Navbar'
+import { Button, Popover } from "antd";
 import axios from "axios"; // for making HTTP requests
 import cheerio from "cheerio"; // for web scraping
 import {Stitch, AnonymousCredential} from "mongodb-stitch-browser-sdk"; // for connecting to MongoDB
@@ -50,6 +51,13 @@ function Main() {
     });
     console.log(result.insertedId);
   };
+   const [open, setOpen] = useState(false);
+   const hide = () => {
+     setOpen(false);
+   };
+   const handleOpenChange = (newOpen) => {
+     setOpen(newOpen);
+   };
 
   return (
     <>
@@ -57,21 +65,29 @@ function Main() {
         <aside className="sidemenu">
           <div className="side-menu-button">
             <span>+</span>
-            New article research
+            Clear Research
           </div>
         </aside>
         <section className="chatbox">
           <div className="result">
             <h1>Web Scraping</h1>
             <form onSubmit={handleSubmit}>
-              <label>
-                Enter article URL:
+              <Popover
+                placement="topRight"
+                content={<a onClick={hide}>Close</a>}
+                title="Enter the finance article url here "
+                trigger="click"
+                open={open}
+                onOpenChange={handleOpenChange}
+              >
                 <input
                   type="text"
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
+                  placeholder=""
                 />
-              </label>
+              </Popover>
+
               <button type="submit">Scrape</button>
             </form>
 
@@ -81,8 +97,8 @@ function Main() {
           </div>
           <div className="chat-log">
             <div className="chat-message"></div>
-            <div className="avatar">Me</div>
-            <div className="message">Hello world</div>
+            <div className="avatar"></div>
+            <div className="message">Result</div>
           </div>
         </section>
       </div>
