@@ -8,7 +8,12 @@ function Home() {
   return (
     <>
       <Navbar></Navbar>
-      <Robot cName="robot" RobotImg={RImg} title="It's all about automation !" text=""></Robot>
+      <Robot
+        cName="robot"
+        RobotImg={RImg}
+        title="It's all about automation !"
+        text=""
+      ></Robot>
       <HomeCo></HomeCo>
     </>
   );

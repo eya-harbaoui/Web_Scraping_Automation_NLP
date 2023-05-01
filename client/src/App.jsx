@@ -14,7 +14,7 @@ function App() {
   const isLoggedIn = window.localStorage.getItem( "loggedIn" );
   return (
     <BrowserRouter>
-      <div className="container">
+      <div>
         <Routes>
           <Route path="/" exact element={<Home />}></Route>
           <Route path="/About" exact element={<About />}></Route>
