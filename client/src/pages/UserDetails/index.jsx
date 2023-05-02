@@ -44,7 +44,7 @@ export default function UserDetails() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       Name <h1>{userData.firstName}</h1>
       Email<h1>{userData.email}</h1>
       <br />

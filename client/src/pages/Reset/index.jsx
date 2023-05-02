@@ -28,7 +28,7 @@ const handleSubmit = (e) => {
         <h1 className={styles.heading}>Forgot Password ?</h1>
             <form className={styles.form_container} onSubmit={handleSubmit}>
                 <div className={styles.right}>
-          <h2 className={styles.from_heading}>Enter your mail to receive the code</h2>
+          <h2 className={styles.from_heading}>Enter your mail to receive the link</h2>
           <input
             type="email"
             name="email"

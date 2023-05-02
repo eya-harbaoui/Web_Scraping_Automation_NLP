@@ -8,7 +8,6 @@
     align-items: center;
 }
 
-
 .heading {
     font-size: 40px;
     font-weight: 600;
@@ -69,8 +68,8 @@
     margin-bottom: 20px;
 }
 
-.input {
-    width: 320px;
+.input2 {
+    width: 280px;
     height: 35px;
     padding: 5px;
     margin: 5px 0;
@@ -78,6 +77,17 @@
     border: 1px solid #2c444e;
     border-radius: 2px;
     font-size: 13px;
+}
+
+.input {
+    width: 320px !important;
+    height: 35px !important;
+    padding: 5px !important;
+    margin: 5px 0 !important;
+    outline: none !important;
+    border: 1px solid #2c444e !important;
+    border-radius: 2px !important;
+    font-size: 13px !important;
 }
 
 .btn {

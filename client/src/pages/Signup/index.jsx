@@ -4,10 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../../components/Inputi"
-import Inputi from "../../components/Inputi";
 import {Input} from "antd";
-import PasswordVisible from "../../components/passwordvisible";
 function Signup() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -115,7 +112,7 @@ function Signup() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <PasswordVisible
+          <Input.Password
             type="password"
             className={styles.input}
             name="password"

@@ -4,7 +4,6 @@ import {useState} from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import PasswordVisible from "../../components/passwordvisible";
 import {Input} from "antd";
 function Login() {
    const [email, setEmail] = useState("");
@@ -68,7 +67,7 @@ function Login() {
             placeholder="Email"
             required
           />
-          <PasswordVisible
+          <Input.Password
             type="password"
             name="password"
             onChange={(e) => setPassword(e.target.value)}
