@@ -17,8 +17,20 @@ function Main() {
   const [source, setSource] = useState("Here is the article source");
   const [topic, setTopic] = useState("Here is the article topic");
   const [date, setDate] = useState("Here is the article date");
-
-  
+  //
+  const SendLink = async () => {
+      try {
+        const resp = await axios.post("http://localhost:8000/predict", url);
+        if (resp.data.error) {
+          alert("error")
+          
+        } else {
+          console.log(resp.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
   // Function to handle form submit and trigger web scraping
   const handleSubmit = async (e) => {
     e.preventDefault(); // prevent page from reloading
@@ -88,7 +100,7 @@ function Main() {
                 />
               </Popover>
 
-              <button type="submit">Scrape</button>
+              <button type="submit" onClick={SendLink}>Scrape</button>
             </form>
 
             <div>
