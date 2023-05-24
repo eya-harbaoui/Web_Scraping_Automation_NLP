@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useMemo, useRef } from "react";
-import Navbar from "../welcome/Navbar";
+import MainNavbar from "./MainNavbar";
 import { Button, Popover, Result } from "antd";
 import axios from "axios"; // for making HTTP requests
 import cheerio from "cheerio"; // for web scraping
@@ -120,31 +120,6 @@ const columns = [
 
     // Make HTTP request to fetch webpage content
     const response = await axios.get(link);
-
-    // Use Cheerio to parse HTML and extract labels
-    //const $ = cheerio.load(response.data);
-    //setTitle($("title").text());
-    //setBody($("body").text());
-    //setAuthor($('meta[name="author"]').attr("content"));
-    //setSource($('meta[property="og:site_name"]').attr("content"));
-    //setTopic($('meta[property="article:tag"]').attr("content"));
-
-    // Save extracted labels to MongoDB
-    //const client = Stitch.initializeDefaultAppClient("<YOUR-APP-ID>");
-    //await client.auth.loginWithCredential(new AnonymousCredential());
-    //const database = client
-    //.getServiceClient(Stitch.RemoteMongoClient.factory, "<YOUR-DB-NAME>")
-    //.db("<YOUR-COLLECTION-NAME>");
-    /*const result = await database.insertOne({
-      link,
-      title,
-      body,
-      author,
-      source,
-      topic,
-      timestamp: new Date(),
-    });
-    console.log(result.insertedId);*/
   };
   const [open, setOpen] = useState(false);
   const hide = () => {
@@ -162,7 +137,9 @@ const columns = [
 
   return (
     <>
+     <MainNavbar/>
       <div className="App">
+       
         <aside className="sidemenu">
           <div className="side-menu-button" onClick={CleanChat}>
             <span>+</span>

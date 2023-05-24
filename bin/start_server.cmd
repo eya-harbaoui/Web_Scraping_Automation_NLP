@@ -1,1 +1,0 @@
-uvicorn markuplmForNER.api:app --reload

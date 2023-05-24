@@ -63,7 +63,7 @@ app.post("/login-user", async(req, res) => {
     //password is encrypted so I need to decrypt it using jwt token
     if (await bcrypt.compare(password, user.password)) {
         const token = jwt.sign({ email: user.email }, JWT_SECRET, {
-            expiresIn: 10, //10 seconds
+            expiresIn: 99999999, //10 seconds
         });
         //successfull login
 

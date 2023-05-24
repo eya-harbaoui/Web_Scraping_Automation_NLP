@@ -4,6 +4,7 @@ import styles from "../Login/styles.module.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./Navbar2";
 export default function UserDetails() {
   const [userData, setUserData] = useState("");
     function logOut() {
@@ -44,13 +45,17 @@ export default function UserDetails() {
   }, []);
 
   return (
-    <div className={styles.container}>
-      Name <h1>{userData.firstName}</h1>
-      Email<h1>{userData.email}</h1>
+    <div className={styles.containerr}>
+      <Navbar />
+        <h1>Account Details</h1>
+      
+      <img className={styles.profileImage} src="../images/profile.png" alt="profile" />
+      <img className={styles.robotImage} src="../images/robotgif.gif" alt="robot" />
+      <div className={styles.content}style={{ marginTop: '20px' }}>
+      Name<h2>{userData.firstName}</h2>
+      Email<h2>{userData.email}</h2>
+      </div>
       <br />
-      <button onClick={logOut} className={styles.btn}>
-        Log out
-      </button>
     </div>
   );
 }

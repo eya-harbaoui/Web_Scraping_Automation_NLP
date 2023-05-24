@@ -1,5 +1,5 @@
 export const MenuLinks = [
-  { title: "Home", url: "/Home", cName: "nav-links", icon: "FaHome" },
+  { title: "Home", url: "/", cName: "nav-links", icon: "FaHome" },
   {
     title: "Demo",
     url: "/Demo",

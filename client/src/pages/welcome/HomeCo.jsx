@@ -1,9 +1,10 @@
+import {Link, useNavigate} from "react-router-dom";
 import React from "react";
 import NewsImg from "./news2.png";
 import userImg from "./user.jpg";
 import nlpImg from "./nlp.png";
 import jsonImg from "./json.png";
-import { Card, Row, Col, Button } from "antd";
+import {Card, Row, Col, Button} from "antd";
 import "./HomeCoStyles.css";
 function HomeCo() {
   return (
@@ -61,7 +62,9 @@ function HomeCo() {
               By creating a secure account on our website, you can save your
               latest research and access it anytime in the future with ease.
             </p>
-            <button className="loginfromhome">Se Connecter</button>
+            <button className="loginfromhome">
+              <Link to="/login">Se Connecter</Link>
+            </button>
           </div>
         </div>
       </div>

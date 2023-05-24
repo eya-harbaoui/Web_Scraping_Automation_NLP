@@ -10,12 +10,6 @@ function Login() {
    const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
-  /*const googleAuth = () => {
-    window.open(
-      `${process.env.REACT_APP_API_URL}/auth/google/callback`,
-      "_self"
-    );
-  };*/
   //The main advantage of using an async function in React is that it allows you to use the await keyword 
   //to wait for asynchronous operations to complete, such as fetching data from an API or performing an expensive computation.
   const handleSubmit = (e) => {
@@ -38,7 +32,6 @@ function Login() {
       .then((data) => {
         console.log( data, "userRegister" );
         if ( data.status == "ok" ) {
-          //alert( "login successful" );
           toast.success("login successful");
           window.localStorage.setItem( "token", data.data );
           window.localStorage.setItem( "loggedIn", true ); //onclick aal login var set to true

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import classNames from "classnames";
 import "./index.css";
-
+import Navbar from "./Navbar2";
 function Main2() {
   const [url, setUrl] = useState("");
   const [articleData, setArticleData] = useState(null);
@@ -22,6 +22,7 @@ function Main2() {
 
   return (
     <div className="App">
+      <Navbar/>
       <h1>Web Scraper</h1>
       <div className="input-container">
         <input
