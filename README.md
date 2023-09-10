@@ -17,10 +17,7 @@ FastAPI and Uvicorn Server: These technologies are used for deploying the NLP mo
 
 MERN Stack: The project includes a web interface created using the MERN (MongoDB, Express.js, React, Node.js) stack. This interface allows users to visualize and interact with the scraped financial article data.
 
-# Getting Started
-To get started with this project, follow these steps:
 
-Clone this repository to your local machine.
 
 Install the required dependencies mentioned in the project's documentation.
 
