@@ -1,27 +1,29 @@
-# Web Scraping Automation
-# Project Objective
-The goal of this project is to automate the process of web scraping for financial articles using advanced Natural Language Processing (NLP) techniques. This automation makes use of the Attention Mechanism present in transformer models, and it encompasses a range of technologies to achieve its objectives.
+🌐 Web Scraping Automation 🚀
+Welcome to the Web Scraping Automation project! This project harnesses the power of Natural Language Processing (NLP) and automation to scrape financial articles and analyze them like never before. Let's dive into the technologies and tools that bring it all together! 🛠️
 
-# Technologies Utilized
-The following technologies are employed in this project:
+🎯 Project Objective
+The goal of this project is to automate the web scraping of financial articles using cutting-edge NLP techniques, specifically the Attention Mechanism in transformer models 🤖. By combining various powerful technologies, this project aims to deliver insightful analysis with speed and accuracy ⚡.
 
-Transformer Library: The project utilizes the Transformer library, which is pivotal for implementing transformer-based NLP techniques.
+💻 Technologies Utilized
+This project stands on the shoulders of some amazing tools and libraries:
 
-Hugging Face's Evaluate Library: This library from Hugging Face is used for evaluation purposes, ensuring the effectiveness of our NLP models.
+🤖 Transformer Library: At the core of our NLP magic, this library helps implement transformer-based techniques for article analysis.
 
-Selenium and BeautifulSoup: Selenium is used for web automation, while BeautifulSoup facilitates web scraping. Together, they enable the collection of financial articles from various websites.
+📊 Hugging Face's Evaluate Library: Ensures our NLP models are performing at their best with precise evaluation metrics.
 
-PyTorch: PyTorch is employed for dataset preparation and model fine-tuning, ensuring that the NLP model performs optimally for the task.
+🕸️ Selenium & BeautifulSoup: Dynamic duo for web automation (Selenium) and web scraping (BeautifulSoup) to gather financial articles from the web.
 
-FastAPI and Uvicorn Server: These technologies are used for deploying the NLP model, making it accessible via an API for integration into various applications.
+🔥 PyTorch: Handles dataset preparation and model fine-tuning to bring out the best from our transformer model.
 
-MERN Stack: The project includes a web interface created using the MERN (MongoDB, Express.js, React, Node.js) stack. This interface allows users to visualize and interact with the scraped financial article data.
+🚀 FastAPI & Uvicorn Server: Powers the deployment of our NLP model via an API, so it’s easy to integrate and use across applications.
 
+🌍 MERN Stack: The user-friendly web interface is built using the MongoDB, Express.js, React, and Node.js stack. It allows users to explore and interact with scraped financial articles visually.
 
+🛠️ Installation
+To get started, make sure to install all the necessary dependencies. Follow the instructions in the project documentation to set everything up 🛠️.
 
-Install the required dependencies mentioned in the project's documentation.
+📖 Usage
+Once everything is up and running, you can use this tool to automatically scrape financial articles with ease! The web interface built using the MERN stack lets you browse, filter, and interact with the data 📰.
+## 📽️ Demo Video
 
-
-# Usage
-Once the project is set up, you can use it for automated web scraping of financial articles. The web interface provided by the MERN Stack allows users to conveniently access and interact with the collected data.
-
+[![Watch the video](https://img.youtube.com/vi/your-video-id/maxresdefault.jpg)](https://github.com/eya-harbaoui/Web_Scraping_Automation_NLP/blob/master/demo.mp4)
