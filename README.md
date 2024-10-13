@@ -17,22 +17,6 @@ This project stands on the shoulders of some amazing tools and libraries:
 - 🚀 **FastAPI & Uvicorn Server**: Powers the deployment of our NLP model via an API, so it's easy to integrate and use across applications.
 - 🌍 **MERN Stack**: The user-friendly web interface is built using the MongoDB, Express.js, React, and Node.js stack. It allows users to explore and interact with scraped financial articles visually.
 
-## 🛠️ Installation
-
-To get started, make sure to install all the necessary dependencies. Follow these steps:
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/your-username/Web_Scraping_Automation_NLP.git
-   cd Web_Scraping_Automation_NLP
-   ```
-
-2. Install the required Python packages:
-   ```
-   pip install -r requirements.txt
-   ```
-
-3. Set up the MERN stack components (follow the individual README files in the respective directories for MongoDB, Express.js, React, and Node.js setup).
 
 ## 📖 Usage
 
