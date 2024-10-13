@@ -1,29 +1,62 @@
-🌐 Web Scraping Automation 🚀
-Welcome to the Web Scraping Automation project! This project harnesses the power of Natural Language Processing (NLP) and automation to scrape financial articles and analyze them like never before. Let's dive into the technologies and tools that bring it all together! 🛠️
+# 🌐 Web Scraping Automation 🚀
 
-🎯 Project Objective
-The goal of this project is to automate the web scraping of financial articles using cutting-edge NLP techniques, specifically the Attention Mechanism in transformer models 🤖. By combining various powerful technologies, this project aims to deliver insightful analysis with speed and accuracy ⚡.
+Welcome to the Web Scraping Automation project! This project harnesses the power of Natural Language Processing (NLP) and automation to scrape financial articles and analyze them like never before.
 
-💻 Technologies Utilized
+## 🎯 Project Objective
+
+The goal of this project is to automate the web scraping of financial articles using cutting-edge NLP techniques, specifically the Attention Mechanism in transformer models. By combining various powerful technologies, this project aims to deliver insightful analysis with speed and accuracy.
+
+## 💻 Technologies Utilized
+
 This project stands on the shoulders of some amazing tools and libraries:
 
-🤖 Transformer Library: At the core of our NLP magic, this library helps implement transformer-based techniques for article analysis.
+- 🤖 **Transformer Library**: At the core of our NLP magic, this library helps implement transformer-based techniques for article analysis.
+- 📊 **Hugging Face's Evaluate Library**: Ensures our NLP models are performing at their best with precise evaluation metrics.
+- 🕸️ **Selenium & BeautifulSoup**: Dynamic duo for web automation (Selenium) and web scraping (BeautifulSoup) to gather financial articles from the web.
+- 🔥 **PyTorch**: Handles dataset preparation and model fine-tuning to bring out the best from our transformer model.
+- 🚀 **FastAPI & Uvicorn Server**: Powers the deployment of our NLP model via an API, so it's easy to integrate and use across applications.
+- 🌍 **MERN Stack**: The user-friendly web interface is built using the MongoDB, Express.js, React, and Node.js stack. It allows users to explore and interact with scraped financial articles visually.
 
-📊 Hugging Face's Evaluate Library: Ensures our NLP models are performing at their best with precise evaluation metrics.
+## 🛠️ Installation
 
-🕸️ Selenium & BeautifulSoup: Dynamic duo for web automation (Selenium) and web scraping (BeautifulSoup) to gather financial articles from the web.
+To get started, make sure to install all the necessary dependencies. Follow these steps:
 
-🔥 PyTorch: Handles dataset preparation and model fine-tuning to bring out the best from our transformer model.
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/Web_Scraping_Automation_NLP.git
+   cd Web_Scraping_Automation_NLP
+   ```
 
-🚀 FastAPI & Uvicorn Server: Powers the deployment of our NLP model via an API, so it’s easy to integrate and use across applications.
+2. Install the required Python packages:
+   ```
+   pip install -r requirements.txt
+   ```
 
-🌍 MERN Stack: The user-friendly web interface is built using the MongoDB, Express.js, React, and Node.js stack. It allows users to explore and interact with scraped financial articles visually.
+3. Set up the MERN stack components (follow the individual README files in the respective directories for MongoDB, Express.js, React, and Node.js setup).
 
-🛠️ Installation
-To get started, make sure to install all the necessary dependencies. Follow the instructions in the project documentation to set everything up 🛠️.
+## 📖 Usage
 
-📖 Usage
-Once everything is up and running, you can use this tool to automatically scrape financial articles with ease! The web interface built using the MERN stack lets you browse, filter, and interact with the data 📰.
+Once everything is up and running, you can use this tool to automatically scrape financial articles with ease! 
+
+1. Start the FastAPI server:
+   ```
+   uvicorn main:app --reload
+   ```
+
+2. Launch the web interface:
+   ```
+   cd frontend
+   npm install
+   npm start
+   ```
+
+3. Open your browser and navigate to `http://localhost:3000` to access the web interface.
+
+4. Use the interface to initiate web scraping, view scraped articles, and analyze the content using our NLP model.
+
 ## 📽️ Demo Video
 
+Check out our demo video to see the Web Scraping Automation project in action:
+
 [![Watch the video](https://img.youtube.com/vi/your-video-id/maxresdefault.jpg)](https://github.com/eya-harbaoui/Web_Scraping_Automation_NLP/blob/master/demo.mp4)
+
