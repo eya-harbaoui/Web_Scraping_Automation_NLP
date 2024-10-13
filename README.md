@@ -18,26 +18,6 @@ This project stands on the shoulders of some amazing tools and libraries:
 - 🌍 **MERN Stack**: The user-friendly web interface is built using the MongoDB, Express.js, React, and Node.js stack. It allows users to explore and interact with scraped financial articles visually.
 
 
-## 📖 Usage
-
-Once everything is up and running, you can use this tool to automatically scrape financial articles with ease! 
-
-1. Start the FastAPI server:
-   ```
-   uvicorn main:app --reload
-   ```
-
-2. Launch the web interface:
-   ```
-   cd frontend
-   npm install
-   npm start
-   ```
-
-3. Open your browser and navigate to `http://localhost:3000` to access the web interface.
-
-4. Use the interface to initiate web scraping, view scraped articles, and analyze the content using our NLP model.
-
 ## 📽️ Demo Video
 
 Check out our demo video to see the Web Scraping Automation project in action:
