@@ -22,5 +22,5 @@ This project stands on the shoulders of some amazing tools and libraries:
 
 Check out our demo video to see the Web Scraping Automation project in action:
 
-[![Watch the video](https://img.youtube.com/vi/your-video-id/maxresdefault.jpg)](https://github.com/eya-harbaoui/Web_Scraping_Automation_NLP/blob/master/demo.mp4)
+[![Watch the video](demo.gif)
 
