@@ -22,5 +22,4 @@ This project stands on the shoulders of some amazing tools and libraries:
 
 Check out our demo video to see the Web Scraping Automation project in action:
 
-[![Watch the video](demo.gif)
-
+![Watch the video](demo.gif)
