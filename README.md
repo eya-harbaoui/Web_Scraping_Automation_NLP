@@ -26,7 +26,7 @@ Check out our demo video to see the Web Scraping Automation project in action:
 
 ## Main Features :
 - **Signup** : Create a new account
-![Alt text](signup.png)
+![Alt text](singup.png)
 
 - **Login** : Access to your account
 ![Alt text](login.png)
