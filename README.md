@@ -23,3 +23,14 @@ This project stands on the shoulders of some amazing tools and libraries:
 Check out our demo video to see the Web Scraping Automation project in action:
 
 ![Watch the video](demo.mp4)
+
+## Main Features :
+- **Signup** : Create a new account
+![Alt text](signup.png)
+
+- **Login** : Access to your account
+![Alt text](login.png)
+- **Change password in case of forgetting your current one** :
+![Alt text](forgetPWD.png)
+ - **Now access to your the main page where you will add a new financial article link and then get the predicted results : (the different elements of this article with their xpaths and type (title,date, author name ...)** :
+![Alt text](main.png)
